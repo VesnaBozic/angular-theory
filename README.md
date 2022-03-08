@@ -4,13 +4,13 @@
 
 ### Installation
 
-#### Node.js
+#### Node.js (Server side Language)
 
 Download installer
 
  [**Installer**](https://nodejs.org/en/)
  
- #### Angular
+ #### Angular CLI (Command Line Interface)
  
   [**Documentation**](https://angular.io/docs)
  
@@ -18,7 +18,7 @@ Download installer
  npm install -g @angular/cli
  ```
  
- ### Create application
+ ### Create Angular Project
  
  In folder where we want to create new angular application, open cmd
  
@@ -26,3 +26,11 @@ Download installer
  ng new my-app
  ```
  
+ ### Run Angular App
+ 
+ ```
+ ng serve
+ 
+```
+
+
