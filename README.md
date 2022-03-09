@@ -1,4 +1,4 @@
-# Client web applications
+# Client web applications with Angular
 
 ## Technologies : Angular, TypeScript, Node.js
 
