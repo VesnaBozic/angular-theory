@@ -26,11 +26,45 @@ Download installer
  ng new my-app
  ```
  
+ ### Generating a component
+ 
+ ```
+ ng generate component new-component
+ ```
+ 
+ ### Generating a service 
+ 
+ ```
+ ng generate service my-new-service
+ 
+ ```
+ 
+ ### Generating a build
+ 
+ ```
+ ng build
+ ```
+ 
+ 
+ 
  ### Run Angular App
  
  ```
  ng serve
  
+```
+
+### Running tests
+
+```
+ng test
+ng e2e
+```
+
+### Linting
+
+```
+ng lint
 ```
 
 # Angular big Picture
