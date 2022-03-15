@@ -67,6 +67,12 @@ ng e2e
 ng lint
 ```
 
+## How to run app from command line 
+
+```
+npm start
+```
+
 # Angular big Picture
 
 - Modules
