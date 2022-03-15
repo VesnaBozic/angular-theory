@@ -168,7 +168,17 @@ Takes the burden od business logic out of components
 
 It is considered best practice to alaways use @Injectable so that metadata is generated correctly
 
-By using the provideIn: 'root' property, we are specifying that Angular shoul provide that service to the root: injector
+By using the provideIn: 'root' property, we are specifying that Angular shoul provide that service to the root: injector.
+
+## Angular CLI
+
+The Angular CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications directly from a command shell.
+
+With Angular CLI we can generate aplication skeleton. 
+
+A newly generated application contains the source files for a root module, with a root component and template. Each application has a src folder that contains the logic, data, and assets.
+
+You can edit the generated files directly, or add to and modify them using CLI commands.
 
 
 
