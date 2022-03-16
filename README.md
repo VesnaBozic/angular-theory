@@ -73,6 +73,16 @@ ng lint
 npm start
 ```
 
+# What is Angular?
+
+Angular is a development platform, built on TypeScript. As a platform, Angular includes:
+
+- A component-based framework for building scalable web applications
+
+- A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more
+
+- A suite of developer tools to help you develop, build, test, and update your code
+
 # Angular big Picture
 
 - Modules
@@ -116,7 +126,11 @@ Routing table is evalueted from top to bottom. Order does matter.
 
 ## Components
 
-Components are the atomic building block of Angular applications. Inside of component there is kind of two separate things that are happening inside of component conceptually. We have template and we have class. 
+***Components are the building blocks that compose an application.***
+
+Components are the atomic building block of Angular applications. Inside of component there is kind of two separate things that are happening inside of component conceptually. 
+
+Component includes HTML template, TypeScript class nad styles. 
 
 - Component are just ES6 classes. And when you define a property on a component class  or a method that becomes available to your template to bind or to execute
 
@@ -126,10 +140,44 @@ Components are the atomic building block of Angular applications. Inside of comp
 
 - The component lifecycle is exposed with hooks. Within a component you have a number of events that happen within the lifespan of a component.
 
+Here is a minimal Angular component. 
+
+```
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'hello-world',
+  template: `
+    <h2>Hello World</h2>
+    <p>This is my first component!</p>
+  `
+})
+export class HelloWorldComponent {
+  // The code in this class drives the component's behavior.
+}
+```
+
+To use this component, you write the following in a template:
+
+```
+<hello-world></hello-world>
+```
+
+When Angular renders this component, the resulting DOM looks like this:
+
+```
+<hello-world>
+    <h2>Hello World</h2>
+    <p>This is my first component!</p>
+</hello-world>
+
+```
 
 ## Templates
 
-A template is a HTML with some Angular pieces in it that tells Angular how to render a component
+A template is a HTML with some Angular pieces in it that tells Angular how to render a component.
+
+You define this template either inline or by file path.
 
 Templates include data bindings as well as it allows us to embed other components as children into our parent componenta and directives
 
@@ -137,14 +185,82 @@ Angular leverages native DOM events and properties which dramatically reduces th
 
 Angular leverages shadow DOM to do some really interesting things with view encapsulation
 
-We can define styles on the component level
+We can define styles on the component level.
 
+Angular extends HTML with additional syntax that lets you insert dynamic values from your component. Angular automatically updates the rendered DOM when your component’s state changes. One application of this feature is inserting dynamic text, as shown in the following example.
+
+We use of double curly braces--they instruct Angular to interpolate the contents within them.
+
+```
+<p>{{ message }}</p>
+```
+
+The value for message comes from the component class:
+
+```
+import { Component } from '@angular/core';
+
+@Component ({
+  selector: 'hello-world-interpolation',
+  templateUrl: './hello-world-interpolation.component.html'
+})
+export class HelloWorldInterpolationComponent {
+    message = 'Hello, World!';
+}
+```
+
+When the application loads the component and its template, the user sees the following:
+
+```
+<p>Hello, World!</p>
+```
+
+Angular also supports property bindings, to help you set values for properties and attributes of HTML elements and pass values to your application's presentation logic.
+
+We use the square brackets--that syntax indicates that you're binding the property or attribute to a value in the component class.
+
+```
+
+<p
+  [id]="sayHelloId"
+  [style.color]="fontColor">
+  You can set my color in the component!
+</p>
+```
+
+Declare event listeners to listen for and respond to user actions such as keystrokes, mouse movements, clicks, and touches. You declare an event listener by specifying the event name in parentheses:
+
+```
+<button
+  type="button"
+  [disabled]="canClick"
+  (click)="sayMessage()">
+  Trigger alert message
+</button>
+
+```
+
+The preceding example calls a method, which is defined in the component class:
+
+```
+sayMessage() {
+  alert(this.message);
+}
+```
+#### Directives 
+
+
+Additional functionality we add through the use of directives. Use directives to perform a variety of tasks, such as dynamically modifying the DOM structure. And create your own custom directives to create great user experiences.
+
+#### Dependency injection
+
+Dependency injection lets you declare the dependencies of your TypeScript classes without taking care of their instantiation. Instead, Angular handles the instantiation for you. This design pattern lets you write more testable and flexible code. Even though understanding dependency injection is not critical to start using Angular, we strongly recommend it as a best practice and many aspects of Angular take advantage of it to some degree.
 
 ## Metadata
 
 Via metadata the template and the class they know about each other. This allows Angular to process the class, process the template and put this together into kind of a single coherent unit. 
 
-Metadata allows Angular to process class
+Metadata allows Angular to process class. The most popular directives in Angular are *ngIf and *ngFor. Use directives to perform a variety of tasks, such as dynamically modifying the DOM structure. And create your own custom directives to create great user experiences.
 
 We can attach ,etadata with TypeScript using decorators
 
@@ -185,6 +301,30 @@ With Angular CLI we can generate aplication skeleton.
 A newly generated application contains the source files for a root module, with a root component and template. Each application has a src folder that contains the logic, data, and assets.
 
 You can edit the generated files directly, or add to and modify them using CLI commands.
+
+```ng build``` - 	Compiles an Angular app into an output directory.
+```ng serve```	- Builds and serves your application, rebuilding on file changes.
+```ng generate``` -	Generates or modifies files based on a schematic.
+```ng test``` -	Runs unit tests on a given project.
+```ng e2e``` -	Builds and serves an Angular application, then runs end-to-end tests.
+
+## First-party libraries
+
+Are architectural elements you'll use when building Angular applications.
+
+Some of the libraries available to you include:
+
+***Angular Router***	Advanced client-side navigation and routing based on Angular components. Supports lazy-loading, nested routes, custom path matching, and more.
+
+***Angular Forms***	Uniform system for form participation and validation.
+
+***Angular HttpClient***	Robust HTTP client that can power more advanced client-server communication.
+
+***Angular Animations***	Rich system for driving animations based on application state.
+
+***Angular PWA	Tools*** for building Progressive Web Applications (PWAs) including a service worker and Web app manifest.
+
+***Angular Schematics***	Automated scaffolding, refactoring, and update tools that simplify development at large scale.
 
 
 
