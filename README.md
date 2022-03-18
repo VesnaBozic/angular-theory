@@ -83,6 +83,10 @@ Angular is a development platform, built on TypeScript. As a platform, Angular i
 
 - A suite of developer tools to help you develop, build, test, and update your code
 
+***Typescript***  is a superset of JavaScript that offers excellent consistency. It is highly recommended, as it provides some syntactic sugar and makes the code base more comfortable to understand and maintain. Ultimately, TypeScript code compiles down to JavaScript that can run efficiently in any environment. 
+
+***Single-Page Application*** are web applications that load once with new features just being mere additions to the user interface. It does not load new HTML pages to display the new page's content, instead generated dynamically. This is made possible through JavaScript's ability to manipulate the DOM elements on the existing page itself. A SPA approach is faster, thus providing a seamless user experience. 
+
 # Angular big Picture
 
 - Modules
@@ -175,6 +179,8 @@ When Angular renders this component, the resulting DOM looks like this:
 
 ## Templates
 
+Angular Templates are written with HTML that contains Angular-specific elements and attributes. In combination with the model and controller's information, these templates are further rendered to provide a dynamic view to the user.
+
 A template is a HTML with some Angular pieces in it that tells Angular how to render a component.
 
 You define this template either inline or by file path.
@@ -252,6 +258,12 @@ sayMessage() {
 
 Additional functionality we add through the use of directives. Use directives to perform a variety of tasks, such as dynamically modifying the DOM structure. And create your own custom directives to create great user experiences.
 
+Directives are attributes that allow the user to write new HTML syntax specific to their applications. They execute whenever the Angular compiler finds them in the DOM. Angular supports three types of directives.  
+
+- Component Directives
+- Structural Directives
+- Attribute Directives 
+
 #### Dependency injection
 
 Dependency injection lets you declare the dependencies of your TypeScript classes without taking care of their instantiation. Instead, Angular handles the instantiation for you. This design pattern lets you write more testable and flexible code. Even though understanding dependency injection is not critical to start using Angular, we strongly recommend it as a best practice and many aspects of Angular take advantage of it to some degree.
@@ -272,13 +284,15 @@ Takes a config option with the selector, templateUrl, styles, styleUrls, animati
 
 ## Data Binding
 
-Enables data to flow from the component to template and vice-versa 
+Enables data to flow from the component to template and vice-versa.
 
 Includes interpolation, property binding, event binding, and two way binding (Property binding and event binding combined)
 
 The binding syntax has expanded but the resulat is a much smaller framework footprint
 
+We use data binding in web pages that contain interactive components such as forms, calculators, tutorials, and games.
 
+Angular uses the two-way binding. Any changes made to the user interface are reflected in the corresponding model state. Conversely, any changes in the model state are reflected in the UI state. This allows the framework to connect the DOM to the Model data via the controller. However, this approach affects performance since every change in the DOM has to be tracked. 
 
 ## Services
 
@@ -340,7 +354,55 @@ A component consist of three things :
 ```<app-root>``` —the first component to load and the container for the other components.
 
 
+## Decorators 
 
+Decorators are a design pattern or functions that define how Angular features work. They are used to make prior modifications to a class, service, or filter. Angular supports four types of decorators, they are:
+
+- Class Decorators
+- Property Decorators
+- Method Decorators
+- Parameter Decorators
+
+## Anotations 
+
+Annotations in Angular are used for creating an annotation array. They are the metadata set on the class that is used to reflect the Metadata library.
+
+## Ahead-of-time compilation
+
+The Ahead-of-time (AOT) compiler converts the Angular HTML and TypeScript code into JavaScript code during the build phase, i.e., before the browser downloads and runs the code.
+
+Some of its advantages are as follows. 
+
+- Faster rendering
+- Fewer asynchronous requests
+- Smaller Angular framework download size
+- Quick detection of template errors
+- Better security
+
+## Pipes
+
+Pipes are simple functions designed to accept an input value, process, and return as an output, a transformed value in a more technical understanding. Angular supports several built-in pipes. However, you can also create custom pipes that cater to your needs. 
+
+Some key features include: 
+
+- Pipes are defined using the pipe “|” symbol. 
+- Pipes can be chained with other pipes.
+- Pipes can be provided with arguments by using the colon (:) sign.
+
+
+## Filters 
+
+Filters are used to format an expression and present it to the user. They can be used in view templates, controllers, or services. Some inbuilt filters are as follows. 
+
+***date*** - Format a date to a specified format.
+
+***filter*** - Select a subset of items from an array.
+
+***Json*** - Format an object to a JSON string.
+
+***limitTo*** -  Limits an array/string, into a specified number of elements/characters.
+
+***lowercase*** - Format a string to lowercase
 
 
 
