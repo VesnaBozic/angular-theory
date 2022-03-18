@@ -327,6 +327,18 @@ Some of the libraries available to you include:
 ***Angular Schematics***	Automated scaffolding, refactoring, and update tools that simplify development at large scale.
 
 
+## How we build Angular applications
+
+With components. Components define areas of responsibility in the UI that let you reuse sets of UI funcionality.
+
+A component consist of three things :
+
+- ```A component class``` that handles data and functionality.
+- ```An HTML template``` that determines the UI.
+- ```Component-specific styles``` that define the look and feel.
+
+```<app-root>``` —the first component to load and the container for the other components.
+
 
 
 
